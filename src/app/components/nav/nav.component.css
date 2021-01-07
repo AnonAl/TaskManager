@@ -1,0 +1,34 @@
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1.5px black solid;
+  background-color: #88a68f;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.navigation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px;
+}
+.navigation:hover div{
+  cursor: pointer;
+}
+.nav:first-child div{
+  padding-left: 10px;
+}
+
+.nav div{
+  display: inline;
+  font-size: 20px;
+  font-family: Roboto, serif;
+  font-weight: bold;
+}
+
+
+
+

@@ -1,0 +1,17 @@
+  <div>
+    <form [formGroup] = formGroup>
+    <span>Registration of account</span>
+    <div class="textField">
+    <input type="text" placeholder="Name" formControlName="userName" size="30px">
+    <input type="text" placeholder="Surname" formControlName="surName" size="30px">
+    <input type="email" placeholder="Email" formControlName="email" size="30px">
+    <input type="text" placeholder="PhoneNum" formControlName="phoneNum" size="30px">
+    <input type="text" placeholder="Password" formControlName="password" size="30px">
+    <input type="text" placeholder="RepeatPassword" formControlName="repeatPass" size="30px">
+    </div>
+
+    <div class="btn">
+      <button type="submit" (click)="checkFormData()">Registration</button>
+    </div>
+  </form>
+</div>
