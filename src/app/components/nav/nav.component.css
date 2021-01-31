@@ -27,6 +27,20 @@
   font-size: 20px;
   font-family: Roboto, serif;
   font-weight: bold;
+  outline: none;
+}
+
+.logo:hover{
+  color: white;
+}
+.home:hover{
+  color: white;
+}
+.registration:hover{
+  color: white;
+}
+.log_In:hover{
+  color: white;
 }
 
 

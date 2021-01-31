@@ -1,17 +1,50 @@
   <div>
-    <form [formGroup] = formGroup>
-    <span>Registration of account</span>
-    <div class="textField">
-    <input type="text" placeholder="Name" formControlName="userName" size="30px">
-    <input type="text" placeholder="Surname" formControlName="surName" size="30px">
-    <input type="email" placeholder="Email" formControlName="email" size="30px">
-    <input type="text" placeholder="PhoneNum" formControlName="phoneNum" size="30px">
-    <input type="text" placeholder="Password" formControlName="password" size="30px">
-    <input type="text" placeholder="RepeatPassword" formControlName="repeatPass" size="30px">
+    <div class="form">
+    <form [formGroup] = formGroup (ngSubmit)="submit()">
+      <label id="title">Registration of account</label>
+      <div class="textField">
+      <div class="userName">
+        <label>User name</label>
+        <input type="text" placeholder="Name" formControlName="userName" size="30px">
+        <label style="display: block" *ngIf="formGroup.get('userName').invalid && formGroup.get('userName').touched" appLabelDirectives >
+          Field has a mistake!
+        </label>
+      </div>
+      <div class="lastName">
+        <label>Last name</label>
+        <input type="text" placeholder="LastName" formControlName="lastName" size="30px">
+        <label *ngIf="formGroup.get('lastName').invalid && formGroup.get('lastName').touched" appLabelDirectives>
+          Field has a mistake!
+        </label>
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" placeholder="Email" formControlName="email" size="30px">
+        <label *ngIf="formGroup.get('email').invalid && formGroup.get('email').touched" appLabelDirectives>Incorrect</label>
+      </div>
+      <div>
+        <label>Phone num</label>
+        <input type="text" placeholder="xxx(xx)-xxx-xx-xx" formControlName="phoneNum" size="30px">
+<!--        <label *ngIf="!validator.validNum(formGroup.get('phoneNum').value)">-->
+<!--          incorrect-->
+<!--        </label>-->
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" placeholder="Password" formControlName="password" size="30px">
+      </div>
+      <div>
+        <label>Repeat password</label>
+        <input type="password" placeholder="RepeatPassword" formControlName="repeatPass" size="30px">
+        <label *ngIf="validator.validPass(formGroup.get('password').value, formGroup.get('repeatPass').value) &&
+         formGroup.get('password').touched" appLabelDirectives>
+          Password doesn't match
+        </label>
+      </div>
     </div>
-
     <div class="btn">
-      <button type="submit" (click)="checkFormData()">Registration</button>
+      <button type="submit">Registration</button>
     </div>
   </form>
 </div>
+  </div>

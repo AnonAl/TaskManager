@@ -11,6 +11,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {RouterModule, Routes} from '@angular/router';
 import { RegistrationComponent } from './components/navEl/registration/registration.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { LabelDirectivesDirective } from './directives/label-directives.directive';
 
 const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch: 'full'},
@@ -24,7 +25,8 @@ const routes: Routes = [
     NavComponent,
     MainComponent,
     FooterComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    LabelDirectivesDirective
   ],
   imports: [
     BrowserModule,
