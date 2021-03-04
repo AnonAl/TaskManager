@@ -1,3 +1,4 @@
+// tslint:disable-next-line:import-spacing
 import  { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -12,6 +13,8 @@ import {RouterModule, Routes} from '@angular/router';
 import { RegistrationComponent } from './components/navEl/registration/registration.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { LabelDirectivesDirective } from './directives/label-directives.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
 
 const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch: 'full'},
@@ -34,6 +37,8 @@ const routes: Routes = [
     AngularFirestoreModule,
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

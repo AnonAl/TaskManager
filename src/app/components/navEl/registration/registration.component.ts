@@ -12,29 +12,29 @@ export class RegistrationComponent implements OnInit {
   formGroup: FormGroup;
   controls: any[];
   validator = new ValidatorsService();
-  constructor( private formBuilder: FormBuilder) {
+
+  constructor(private formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
-        userName : ['', [Validators.pattern(/^[a-zA-Z]+$/), Validators.required,
+        userName: ['', [Validators.pattern(/^[a-zA-Z]+$/), Validators.required,
           Validators.minLength(3)]],
-        lastName : ['', [Validators.pattern(/^[a-zA-Z]+$/), Validators.required,
+        lastName: ['', [Validators.pattern(/^[a-zA-Z]+$/), Validators.required,
           Validators.minLength(3)]],
-        email : ['', [Validators.pattern(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/), Validators.required]],
-        phoneNum : ['',[Validators.required, Validators.minLength(7)]],
-        password : [''],
-        repeatPass : ['']
+        email: ['', [Validators.pattern(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/), Validators.required]],
+        // phoneNum: ['', [Validators.required, Validators.minLength(7)]],
+        password: ['', [Validators.required]],
+        repeatPass: ['', [Validators.required, this.validator.validPass]]
       }
     );
   }
 
 
-  submit(): void{
-    if (this.formGroup.invalid){
+  submit(): void {
+    if (this.formGroup.valid) {
       console.log(this.formGroup.getRawValue());
-    }
-    else{
+    } else {
       alert('The form has a problem');
     }
   }

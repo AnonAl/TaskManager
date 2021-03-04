@@ -5,7 +5,7 @@ import {AbstractControl, FormGroup} from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
-export class ValidatorsService  implements OnInit{
+export class ValidatorsService implements OnInit {
 
   flag: boolean;
 
@@ -13,26 +13,26 @@ export class ValidatorsService  implements OnInit{
   }
 
   ngOnInit(): void {
-   this.flag = false;
+    this.flag = false;
   }
 
   validEmail(email: string): void {
 
   }
 
-  validPass(password: AbstractControl, repeatPass: AbstractControl): boolean{
+  validPass(password: AbstractControl, repeatPass: AbstractControl): boolean {
     if (password !== repeatPass){
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
+
+
   validNum(num: AbstractControl): boolean {
-    if(num.value !== Number ){
+    if (num.value !== Number) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
